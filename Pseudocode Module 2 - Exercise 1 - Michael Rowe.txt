@@ -1,0 +1,17 @@
+// This program calculates the capacity of a refrigerator in cubic feet
+// based on the interior dimensions provided by the user.
+
+start
+   input modelName            // User's refrigerator model name.
+   input height               // Interior height of the refrigerator in inches.
+   input width                // Interior width of the refrigerator in inches.
+   input depth                // Interior depth of the refrigerator in inches.
+   
+   CUBIC_INCHES_IN_A_CUBIC_FOOT = 1728  // Constant for converting cubic inches to cubic feet.
+   
+   capacityInCubicInches = height * width * depth  // Calculate the capacity in cubic inches.
+   capacityInCubicFeet = capacityInCubicInches / CUBIC_INCHES_IN_A_CUBIC_FOOT  // Convert to cubic feet.
+   
+   output modelName           // Display the refrigerator model name.
+   output capacityInCubicFeet // Display the calculated capacity in cubic feet.
+stop

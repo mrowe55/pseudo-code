@@ -1,0 +1,17 @@
+// This program calculates the monthly checking account fee
+// and the new account balance for Hometown Bank customers.
+
+start
+   accountBalance = 0                    // Initialize account balance.
+   overDrawnFee = 0                      // Initialize the overdraft fee.
+
+   input accountBalance                  // Collect the current account balance.
+   input timesOverdrawn                  // Collect the number of times the account was overdrawn.
+
+   overDrawnFee = (accountBalance * 0.01) - (timesOverdrawn * 5)  // Calculate the overdraft fee.
+   newAccountBalance = accountBalance - overDrawnFee              // Calculate the new account balance.
+
+   output overDrawnFee                   // Display the calculated fee.
+   output newAccountBalance              // Display the new account balance.
+   output "Thanks for using this program" // Display a thank you message.
+stop
