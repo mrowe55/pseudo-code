@@ -1,0 +1,26 @@
+// Initialize the game
+start
+   // Define the secret number
+   secretNumber = 42 // Change this to the number you want to be guessed
+   guessedCorrectly = false
+   
+   // Loop until the player guesses the correct number
+   while guessedCorrectly is false
+      // Ask the player to make a guess
+      output "Guess a number between 1 and 100:"
+      playerGuess = input()
+      
+      // Check if the guess is correct
+      if playerGuess == secretNumber then
+         output "Congratulations! You guessed the correct number."
+         guessedCorrectly = true
+      else
+         // Provide feedback on the guess
+         if playerGuess < secretNumber then
+            output "Your guess is too low. Try again."
+         else
+            output "Your guess is too high. Try again."
+         endif
+      endif
+   endwhile
+stop

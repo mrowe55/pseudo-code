@@ -1,0 +1,34 @@
+// Initialize the dictionary lookup process
+start
+   // Define the target word to look up
+   targetWord = "logic" // Change this to the word you want to look up
+   foundWord = false
+   startPage = 1
+   endPage = totalPages // Assume totalPages is the total number of pages in the dictionary
+
+   // Loop until the word is found or pages are exhausted
+   while foundWord is false and startPage <= endPage
+      // Calculate the midpoint of the current range
+      midpointPage = (startPage + endPage) / 2
+      
+      // Look up the word on the midpoint page
+      wordOnPage = lookUpWordOnPage(midpointPage) // Assume lookUpWordOnPage(page) returns the word on that page
+
+      // Compare the word on the page with the target word
+      if wordOnPage == targetWord then
+         output "The word " + targetWord + " is found on page " + midpointPage + "."
+         foundWord = true
+      else if wordOnPage < targetWord then
+         // Move forward in the dictionary
+         startPage = midpointPage + 1
+      else
+         // Move backward in the dictionary
+         endPage = midpointPage - 1
+      endif
+   endwhile
+   
+   // If the word is not found
+   if foundWord is false then
+      output "The word " + targetWord + " is not in the dictionary."
+   endif
+stop
